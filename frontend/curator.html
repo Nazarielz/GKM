@@ -1,0 +1,138 @@
+
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101827">
+  <title>Curator Dashboard | Galeri Karya</title>
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+
+<body>
+  <header class="navbar">
+    <a href="/" class="brand">
+      <span class="brand-icon">G</span>
+      <span>Galeri Karya</span>
+    </a>
+
+    <nav class="main-nav">
+      <a href="/">Explore</a>
+      <a href="/creator.html">Creator Dashboard</a>
+      <a href="/curator.html" class="active">Curator Dashboard</a>
+      <a href="/admin-creators.html">Admin</a>
+    </nav>
+
+    <div class="nav-right">
+      <span id="networkStatus" class="network-status">
+        Belum terhubung
+      </span>
+
+      <button id="connectWallet" class="btn btn-wallet">
+        Hubungkan Wallet
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="creator-welcome">
+      <span class="eyebrow">CURATOR AREA</span>
+      <h1>Review Karya Digital</h1>
+      <p>
+        Periksa pengajuan karya dari Creator sebelum diterbitkan
+        sebagai NFT di blockchain.
+      </p>
+
+      <div class="wallet-info">
+        <span>Wallet Kurator</span>
+        <strong id="walletAddress">Belum terhubung</strong>
+      </div>
+    </section>
+
+    <section class="creator-stats">
+      <div class="stat-card">
+        <span>Total Pengajuan</span>
+        <strong id="totalPending">0</strong>
+      </div>
+
+      <div class="stat-card">
+        <span>Menunggu Review</span>
+        <strong id="waitingReview">0</strong>
+      </div>
+
+      <div class="stat-card">
+        <span>Hak Akses</span>
+        <strong id="curatorRole">Belum diperiksa</strong>
+      </div>
+    </section>
+
+    <section class="creator-works-section">
+      <div class="gallery-heading">
+        <div>
+          <span class="eyebrow">ARTWORK MODERATION</span>
+          <h2>Pengajuan Karya</h2>
+          <p>Daftar karya yang menunggu keputusan kurator.</p>
+        </div>
+
+        <button id="refreshPending" class="btn btn-wallet">
+          Refresh Pengajuan
+        </button>
+      </div>
+
+      <div id="curatorMessage" class="message hidden"></div>
+
+      <div id="pendingInfo" class="gallery-info">
+        Hubungkan wallet kurator untuk melihat pengajuan.
+      </div>
+
+      <div id="pendingGrid" class="gallery-grid"></div>
+    </section>
+
+  </main>
+
+  <!-- ========================================
+       CUSTOM MODAL KONFIRMASI & PENOLAKAN
+  ========================================= -->
+  <div id="curatorModal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-box">
+      <div class="modal-header">
+        <span id="modalEyebrow" class="eyebrow">KONFIRMASI KURATOR</span>
+        <h3 id="modalTitle">Judul Modal</h3>
+      </div>
+
+      <p id="modalDescription" class="modal-description">
+        Deskripsi konfirmasi.
+      </p>
+
+      <!-- Input Alasan (Muncul khusus saat Tolak Karya) -->
+      <div id="modalInputGroup" class="modal-input-group hidden">
+        <label for="rejectReasonInput">Alasan Penolakan</label>
+        <textarea
+          id="rejectReasonInput"
+          rows="3"
+          placeholder="Contoh: Resolusi gambar terlalu rendah atau tidak sesuai kategori..."
+        ></textarea>
+        <span id="modalInputError" class="modal-input-error hidden">
+          Alasan penolakan wajib diisi.
+        </span>
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" id="modalCancelBtn" class="btn btn-wallet">
+          Batal
+        </button>
+        <button type="button" id="modalConfirmBtn" class="btn btn-primary">
+          Konfirmasi
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <footer>
+    Galeri Karya Multimedia — AI & Blockchain Project
+  </footer>
+
+  <script type="module" src="/src/curator.js"></script>
+</body>
+</html>

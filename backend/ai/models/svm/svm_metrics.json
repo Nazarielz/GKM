@@ -1,0 +1,74 @@
+{
+    "model": "SVM",
+    "features": [
+        "HSV Color Histogram",
+        "Local Binary Pattern"
+    ],
+    "classes": [
+        "Foto",
+        "Ilustrasi",
+        "Poster"
+    ],
+    "train_samples": 72,
+    "validation_samples": 18,
+    "test_samples": 30,
+    "feature_count": 304,
+    "best_parameters": {
+        "svc__C": 0.1,
+        "svc__kernel": "linear"
+    },
+    "cross_validation_macro_f1": 0.9035714285714286,
+    "validation_accuracy": 0.7222222222222222,
+    "test_accuracy": 0.8666666666666667,
+    "classification_report": {
+        "Foto": {
+            "precision": 0.9,
+            "recall": 0.9,
+            "f1-score": 0.9,
+            "support": 10.0
+        },
+        "Ilustrasi": {
+            "precision": 0.8181818181818182,
+            "recall": 0.9,
+            "f1-score": 0.8571428571428571,
+            "support": 10.0
+        },
+        "Poster": {
+            "precision": 0.8888888888888888,
+            "recall": 0.8,
+            "f1-score": 0.8421052631578947,
+            "support": 10.0
+        },
+        "accuracy": 0.8666666666666667,
+        "macro avg": {
+            "precision": 0.869023569023569,
+            "recall": 0.8666666666666667,
+            "f1-score": 0.8664160401002506,
+            "support": 30.0
+        },
+        "weighted avg": {
+            "precision": 0.8690235690235689,
+            "recall": 0.8666666666666667,
+            "f1-score": 0.8664160401002505,
+            "support": 30.0
+        }
+    },
+    "confusion_matrix": [
+        [
+            9,
+            0,
+            1
+        ],
+        [
+            1,
+            9,
+            0
+        ],
+        [
+            0,
+            2,
+            8
+        ]
+    ],
+    "training_runtime_seconds": 0.5573240999947302
+}

@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#faf7f2">
+  <title>Creator Dashboard — Galeri Karya</title>
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+
+<body>
+  <header class="navbar">
+    <a href="/" class="brand">
+      <span class="brand-icon">G</span>
+      <span>Galeri Karya</span>
+    </a>
+
+    <nav class="main-nav">
+      <a href="/">Explore</a>
+      <a href="/creator.html" class="active">Creator Dashboard</a>
+      <a href="/curator.html">Curator Dashboard</a>
+      <a href="/admin-creators.html">Admin</a>
+    </nav>
+
+    <div class="nav-right">
+      <span id="networkStatus" class="network-status">
+        Belum terhubung
+      </span>
+      <button id="connectWallet" class="btn btn-wallet">
+        Hubungkan Wallet
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- HERO CREATOR -->
+    <section class="hero">
+      <span class="eyebrow">CREATOR WORKSPACE</span>
+      <h1>Kelola Karya,<br><span>Bangun Aset Digital.</span></h1>
+      <p>
+        Unggah karya multimedia, pantau proses pengajuan,
+        dan kelola NFT yang telah diterbitkan.
+      </p>
+    </section>
+
+    <!-- INFORMASI WALLET -->
+    <section class="creator-welcome">
+      <div>
+        <span class="eyebrow">CREATOR ACCOUNT</span>
+        <h2>Creator Dashboard</h2>
+        <p id="creatorAddress">Hubungkan wallet untuk memulai.</p>
+      </div>
+
+      <button id="refreshCreator" class="btn btn-wallet" type="button">
+        Refresh Dashboard
+      </button>
+    </section>
+
+    <!-- STATISTIK -->
+    <section class="creator-stats">
+      <article class="stat-card">
+        <span>Total Karya</span>
+        <strong id="totalWorks">0</strong>
+      </article>
+
+      <article class="stat-card">
+        <span>Menunggu Review</span>
+        <strong id="pendingWorks">0</strong>
+      </article>
+
+      <article class="stat-card">
+        <span>Sudah Minted</span>
+        <strong id="mintedWorks">0</strong>
+      </article>
+
+      <article class="stat-card">
+        <span>Ditolak</span>
+        <strong id="rejectedWorks">0</strong>
+      </article>
+    </section>
+
+    <!-- UPLOAD KARYA -->
+    <section id="uploadSection" class="content-grid">
+
+      <div class="form-card">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">NEW SUBMISSION</span>
+            <h2>Ajukan Karya Baru</h2>
+          </div>
+          <span class="step-label">01 / 03</span>
+        </div>
+
+        <form id="artworkForm">
+          <!-- 1. JUDUL KARYA -->
+          <label for="title">Judul Karya</label>
+          <input
+            id="title"
+            name="title"
+            type="text"
+            placeholder="Contoh: Sang Proklamator"
+            required
+          >
+
+          <!-- 2. GAMBAR & KLASIFIKASI AI -->
+          <label for="artworkFile">File Karya</label>
+          <input
+            id="artworkFile"
+            name="file"
+            type="file"
+            accept="image/*"
+            required
+          >
+
+          <div id="imagePreview" class="image-preview hidden">
+            <img id="previewImage" alt="Preview karya">
+          </div>
+
+          <div id="aiRecommendation" class="ai-recommendation hidden">
+            <span class="eyebrow">AI CLASSIFICATION — MOBILENETV2</span>
+
+            <h3>Hasil Klasifikasi AI</h3>
+
+            <p id="aiStatus">Menunggu gambar...</p>
+
+            <div class="ai-result">
+              <span>Kategori yang direkomendasikan</span>
+              <strong id="aiCategory">-</strong>
+            </div>
+
+            <div class="ai-result">
+              <span>Tingkat keyakinan model</span>
+              <strong id="aiConfidence">-</strong>
+            </div>
+
+            <div id="aiProbabilities" class="ai-probabilities"></div>
+
+            <button
+              id="useAiCategory"
+              class="btn btn-wallet"
+              type="button"
+              disabled
+            >
+              Gunakan Rekomendasi AI
+            </button>
+
+            <p class="ai-note">
+              Rekomendasi AI dapat diperiksa dan diubah oleh Creator.
+              Keputusan kategori akhir tetap berada di tangan Creator.
+            </p>
+          </div>
+
+          <!-- 3. KATEGORI KARYA -->
+          <label for="category">Kategori Karya</label>
+          <select id="category" name="category" required>
+            <option value="">Pilih kategori</option>
+            <option value="Foto">Foto</option>
+            <option value="Ilustrasi">Ilustrasi</option>
+            <option value="Poster">Poster</option>
+          </select>
+
+          <!-- 4. DESKRIPSI KARYA -->
+          <label for="description">Deskripsi Karya</label>
+          <textarea
+            id="description"
+            name="description"
+            placeholder="Ceritakan tentang karya kamu..."
+            required
+          ></textarea>
+
+          <!-- USERNAME CREATOR OTOMATIS -->
+          <label for="creator">Username Creator</label>
+
+          <input
+            id="creator"
+            name="creator"
+            type="text"
+            placeholder="Hubungkan wallet untuk mengambil username"
+            readonly
+            required
+          >
+
+          <small>
+            Username otomatis diambil dari akun pendaftaran kreator
+            dan tidak dapat diubah.
+          </small>
+
+          <button
+            id="submitArtwork"
+            class="btn btn-primary"
+            type="submit"
+          >
+            Upload dan Ajukan Karya
+          </button>
+        </form>
+
+        <div id="message" class="message hidden"></div>
+      </div>
+
+      <aside class="info-card">
+        <span class="eyebrow">SUBMISSION PROCESS</span>
+        <h2>Perjalanan Karya</h2>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="timeline-number">01</span>
+            <div>
+              <h3>Upload Karya</h3>
+              <p>File dan metadata disimpan ke IPFS melalui Pinata.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-number">02</span>
+            <div>
+              <h3>Pengajuan Blockchain</h3>
+              <p>Creator mengirim transaksi melalui wallet.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-number">03</span>
+            <div>
+              <h3>Review Kurator</h3>
+              <p>Kurator memeriksa dan menentukan keputusan.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-number">04</span>
+            <div>
+              <h3>Minting NFT</h3>
+              <p>Karya yang disetujui diterbitkan sebagai NFT.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="wallet-info">
+          <span>Wallet aktif</span>
+          <strong id="walletAddress">Belum terhubung</strong>
+        </div>
+      </aside>
+    </section>
+
+    <!-- DAFTAR KARYA CREATOR -->
+    <section class="gallery-section creator-works-section">
+      <div class="gallery-heading">
+        <div>
+          <span class="eyebrow">MY COLLECTION</span>
+          <h2>Karya Saya</h2>
+          <p>Pantau status seluruh karya yang kamu ajukan.</p>
+        </div>
+      </div>
+
+      <div id="creatorWorksInfo" class="gallery-info">
+        Hubungkan wallet untuk melihat karya milikmu.
+      </div>
+
+      <div id="creatorWorksGrid" class="gallery-grid"></div>
+    </section>
+
+  </main>
+
+  <footer>
+    Galeri Karya Multimedia — AI & Blockchain Project
+  </footer>
+
+  <script type="module" src="/src/creator.js"></script>
+</body>
+</html>

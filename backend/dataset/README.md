@@ -1,0 +1,1 @@
+Simpan dataset yang sah dan berizin secara lokal. Catat path, label, grup/sumber, dan split dalam manifest. Pisahkan berdasarkan grup/sumber; augmentasi hanya pada train. Jangan commit dataset besar atau tanpa izin.

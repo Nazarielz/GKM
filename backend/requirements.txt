@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+python-multipart
+pydantic
+pillow
+numpy
+torch
+torchvision
+scikit-learn
+joblib
+python-dotenv
+httpx
+eth-account>=0.13,<1

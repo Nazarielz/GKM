@@ -1,0 +1,61 @@
+{
+    "architecture": "MobileNetV2",
+    "classes": [
+        "Foto",
+        "Ilustrasi",
+        "Poster"
+    ],
+    "test_accuracy": 0.9333333333333333,
+    "classification_report": {
+        "Foto": {
+            "precision": 0.8333333333333334,
+            "recall": 1.0,
+            "f1-score": 0.9090909090909091,
+            "support": 10.0
+        },
+        "Ilustrasi": {
+            "precision": 1.0,
+            "recall": 0.8,
+            "f1-score": 0.8888888888888888,
+            "support": 10.0
+        },
+        "Poster": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 10.0
+        },
+        "accuracy": 0.9333333333333333,
+        "macro avg": {
+            "precision": 0.9444444444444445,
+            "recall": 0.9333333333333332,
+            "f1-score": 0.9326599326599326,
+            "support": 30.0
+        },
+        "weighted avg": {
+            "precision": 0.9444444444444445,
+            "recall": 0.9333333333333333,
+            "f1-score": 0.9326599326599326,
+            "support": 30.0
+        }
+    },
+    "confusion_matrix": [
+        [
+            10,
+            0,
+            0
+        ],
+        [
+            2,
+            8,
+            0
+        ],
+        [
+            0,
+            0,
+            10
+        ]
+    ],
+    "test_samples": 30,
+    "best_validation_accuracy": 1.0
+}

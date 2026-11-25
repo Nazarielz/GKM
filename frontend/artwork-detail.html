@@ -1,0 +1,433 @@
+
+<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101827">
+
+  <title>Detail Karya — Galeri Karya</title>
+
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+
+<body>
+
+  <!-- ========================================
+       NAVBAR
+  ========================================= -->
+
+  <header class="navbar">
+
+    <a href="/" class="brand">
+      <span class="brand-icon">G</span>
+      <span>Galeri Karya</span>
+    </a>
+
+    <nav class="main-nav">
+      <a href="/" class="active">Explore</a>
+      <a href="/creator.html">Creator Dashboard</a>
+      <a href="/curator.html">Curator Dashboard</a>
+      <a href="/admin-creators.html">Admin</a>
+    </nav>
+
+    <div class="nav-right">
+      <span class="network-status" id="networkStatus">
+        Memuat Blockchain...
+      </span>
+    </div>
+
+  </header>
+
+
+  <!-- ========================================
+       KONTEN UTAMA
+  ========================================= -->
+
+  <main class="container">
+
+    <!-- NAVIGASI KEMBALI -->
+
+    <section class="detail-navigation">
+
+      <a href="/" class="back-link">
+        ← Kembali ke Explore Gallery
+      </a>
+
+    </section>
+
+
+    <!-- JUDUL HALAMAN -->
+
+    <section class="detail-heading">
+
+      <span class="eyebrow">
+        DIGITAL ART COLLECTION
+      </span>
+
+      <h1>Informasi Karya</h1>
+
+      <p>
+        Jelajahi informasi karya dan periksa keaslian
+        pencatatan NFT melalui blockchain.
+      </p>
+
+    </section>
+
+
+    <!-- STATUS PEMUATAN -->
+
+    <div id="detailInfo" class="gallery-info">
+      Sedang mengambil informasi karya...
+    </div>
+
+
+    <!-- ========================================
+         DETAIL KARYA
+    ========================================= -->
+
+    <section
+      id="artworkDetail"
+      class="artwork-detail hidden"
+    >
+
+      <!-- GAMBAR KARYA -->
+
+      <div class="detail-image-section">
+
+        <div class="detail-image-frame">
+
+          <img
+            id="artworkImage"
+            src=""
+            alt="Gambar karya digital"
+          >
+
+        </div>
+
+      </div>
+
+
+      <!-- INFORMASI KARYA -->
+
+      <div class="detail-information">
+
+        <span
+          id="artworkCategory"
+          class="artwork-category"
+        >
+          Kategori
+        </span>
+
+        <h2 id="artworkName">
+          Nama Karya
+        </h2>
+
+        <p id="artworkDescription">
+          Deskripsi karya.
+        </p>
+
+        <div class="detail-divider"></div>
+
+        <h3>Informasi Kreator</h3>
+
+        <div class="detail-data">
+
+          <div class="detail-data-item">
+            <span>Creator Wallet</span>
+            <strong id="artworkCreator">-</strong>
+          </div>
+
+          <div class="detail-data-item">
+            <span>Username</span>
+            <strong id="artworkCreatorUsername">Memuat...</strong>
+          </div>
+
+          <div class="detail-data-item">
+            <span>Artwork ID</span>
+            <strong id="artworkId">-</strong>
+          </div>
+
+          <div class="detail-data-item">
+            <span>Status Karya</span>
+            <strong id="artworkStatus">-</strong>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================
+         VERIFIKASI NFT
+    ========================================= -->
+
+    <section
+      id="verificationSection"
+      class="verification-section hidden"
+    >
+
+      <!-- HEADING VERIFIKASI -->
+
+      <div class="verification-heading">
+
+        <div>
+
+          <span class="eyebrow">
+            BLOCKCHAIN RECORD
+          </span>
+
+          <h2>Verifikasi NFT</h2>
+
+          <p>
+            Informasi penerbitan dan kepemilikan NFT
+            berdasarkan catatan smart contract.
+          </p>
+
+        </div>
+
+        <span
+          id="verificationBadge"
+          class="verification-badge"
+        >
+          Memeriksa...
+        </span>
+
+      </div>
+
+
+      <!-- DATA NFT -->
+
+      <div class="verification-card">
+
+        <h3>Informasi Blockchain</h3>
+
+        <div class="detail-data">
+
+          <div class="detail-data-item">
+            <span>Status Verifikasi</span>
+            <strong id="verificationStatus">-</strong>
+          </div>
+
+          <div class="detail-data-item">
+            <span>Token ID</span>
+            <strong id="tokenId">-</strong>
+          </div>
+
+          <div class="detail-data-item">
+            <span>Owner Saat Ini</span>
+            <strong id="tokenOwner">-</strong>
+          </div>
+
+          <div class="detail-data-item">
+            <span>Jaringan Blockchain</span>
+            <strong id="blockchainNetwork">-</strong>
+          </div>
+
+          <div class="detail-data-item">
+            <span>Smart Contract</span>
+            <strong id="contractAddress">-</strong>
+          </div>
+
+          <div class="detail-data-item">
+            <span>Content Hash</span>
+            <strong id="contentHash">-</strong>
+          </div>
+
+          <div class="detail-data-item">
+            <span>Metadata URI</span>
+            <strong id="metadataURI">-</strong>
+          </div>
+
+          <div class="detail-data-item">
+            <span>IPFS CID</span>
+            <strong id="ipfsCID">-</strong>
+          </div>
+
+          <div class="detail-data-item">
+            <span>Alamat Kurator</span>
+            <strong id="curatorAddress">-</strong>
+          </div>
+
+          <div class="detail-data-item">
+            <span>Transaction Hash</span>
+            <strong id="transactionHash">-</strong>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- CATATAN VERIFIKASI -->
+
+      <div class="verification-note">
+
+        <strong>Catatan Verifikasi</strong>
+
+        <p>
+          Data ini menunjukkan catatan penerbitan dan kepemilikan
+          NFT yang tersimpan pada blockchain serta metadata
+          karya yang tersimpan di IPFS.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================
+         TRANSFER NFT
+    ========================================= -->
+
+    <section
+      id="transferSection"
+      class="transfer-section hidden"
+    >
+
+      <!-- HEADING TRANSFER -->
+
+      <div class="verification-heading">
+
+        <div>
+
+          <span class="eyebrow">
+            NFT OWNERSHIP
+          </span>
+
+          <h2>Transfer NFT</h2>
+
+          <p>
+            Pindahkan kepemilikan NFT kepada wallet lain
+            melalui jaringan blockchain.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- INFORMASI TRANSFER -->
+
+      <div class="verification-card">
+
+        <h3>Informasi Wallet</h3>
+
+        <div class="detail-data">
+
+          <div class="detail-data-item">
+
+            <span>Wallet Terhubung</span>
+
+            <strong id="transferWallet">
+              Belum terhubung
+            </strong>
+
+          </div>
+
+          <div class="detail-data-item">
+
+            <span>Status Kepemilikan</span>
+
+            <strong id="transferEligibility">
+              Hubungkan wallet untuk memeriksa
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <!-- FORM TRANSFER -->
+
+        <div class="transfer-form">
+
+          <button
+            type="button"
+            id="connectTransferWallet"
+            class="transfer-button secondary"
+          >
+            Hubungkan MetaMask
+          </button>
+
+
+          <label for="recipientAddress">
+            Alamat Wallet Penerima
+          </label>
+
+          <input
+            type="text"
+            id="recipientAddress"
+            placeholder="Masukkan alamat wallet penerima (0x...)"
+            autocomplete="off"
+            spellcheck="false"
+          >
+
+
+          <button
+            type="button"
+            id="transferNFTButton"
+            class="transfer-button"
+            disabled
+          >
+            Transfer NFT
+          </button>
+
+
+          <div
+            id="transferMessage"
+            class="transfer-message"
+            aria-live="polite"
+          >
+            Hubungkan wallet pemilik NFT untuk memulai transfer.
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- CATATAN TRANSFER -->
+
+      <div class="verification-note">
+
+        <strong>Informasi Transfer</strong>
+
+        <p>
+          Transfer NFT merupakan pemindahan kepemilikan
+          aset digital dari satu wallet ke wallet lainnya.
+          Fitur ini tidak melibatkan transaksi jual beli.
+          Biaya gas blockchain tetap dapat dikenakan.
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ========================================
+       FOOTER
+  ========================================= -->
+
+  <footer>
+    Galeri Karya Multimedia — AI & Blockchain Project
+  </footer>
+
+
+  <!-- ========================================
+       JAVASCRIPT
+  ========================================= -->
+
+  <script
+    type="module"
+    src="/src/artwork-detail.js"
+  ></script>
+
+</body>
+
+</html>

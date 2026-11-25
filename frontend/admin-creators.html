@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Approval | Galeri Karya</title>
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="/" class="brand">
+      <span class="brand-icon">G</span>
+      Galeri Karya
+    </a>
+
+    <nav class="main-nav">
+        <a href="/">Explore</a>
+        <a href="/creator.html">Creator Dashboard</a>
+        <a href="/curator.html">Curator Dashboard</a>
+        <a href="/admin-creators.html" class="active">Admin</a>
+    </nav>
+
+    <div class="nav-right">
+      <span id="networkStatus" class="network-status">
+        Belum terhubung
+      </span>
+      <span id="walletAddress">-</span>
+      <button id="connectWallet" class="btn btn-primary">
+        Hubungkan Wallet
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="creator-welcome admin-welcome">
+      <div>
+        <span class="eyebrow">ADMINISTRATION</span>
+        <h1>Manajemen Kreator</h1>
+        <p>
+          Kelola pendaftaran kreator dan berikan akses untuk
+          mengunggah karya ke Galeri Karya.
+        </p>
+      </div>
+
+      <div class="wallet-info">
+        <span>Administrator Wallet</span>
+        <strong id="adminAddress">Belum terhubung</strong>
+        <span class="admin-role-label">Hak akses</span>
+        <strong id="adminRole">Belum diverifikasi</strong>
+      </div>
+    </section>
+
+    <section class="creator-stats admin-stats">
+      <div class="stat-card">
+        <span>Total Pendaftar</span>
+        <strong id="totalCreators">0</strong>
+      </div>
+
+      <div class="stat-card">
+        <span>Menunggu Persetujuan</span>
+        <strong id="pendingCreators">0</strong>
+      </div>
+
+      <div class="stat-card">
+        <span>Telah Disetujui</span>
+        <strong id="approvedCreators">0</strong>
+      </div>
+
+      <div class="stat-card">
+        <span>Ditolak</span>
+        <strong id="rejectedCreators">0</strong>
+      </div>
+    </section>
+
+    <div id="adminMessage" class="message hidden"></div>
+
+    <section class="admin-section">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">CREATOR REGISTRATION</span>
+          <h2>Pendaftaran Kreator</h2>
+          <p class="admin-subtitle">
+            Periksa data pendaftar sebelum memberikan akses kreator.
+          </p>
+        </div>
+
+        <button id="refreshCreators" class="btn btn-wallet">
+          ↻ Refresh
+        </button>
+      </div>
+
+      <div class="admin-filter">
+        <button class="admin-filter-btn active" data-filter="pending">
+          Menunggu
+        </button>
+        <button class="admin-filter-btn" data-filter="approved">
+          Disetujui
+        </button>
+        <button class="admin-filter-btn" data-filter="rejected">
+          Ditolak
+        </button>
+        <button class="admin-filter-btn" data-filter="all">
+          Semua
+        </button>
+      </div>
+
+      <div id="creatorInfo" class="gallery-info">
+        Hubungkan wallet administrator untuk melihat pendaftaran.
+      </div>
+
+      <div id="creatorGrid" class="admin-creator-grid"></div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Galeri Karya Multimedia. All rights reserved.</p>
+  </footer>
+
+  <script type="module" src="/src/admin-creators.js"></script>
+</body>
+</html>

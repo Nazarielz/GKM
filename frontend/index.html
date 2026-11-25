@@ -1,0 +1,161 @@
+
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101827">
+  <title>Galeri Karya Multimedia</title>
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a href="#" class="brand">
+      <span class="brand-icon">G</span>
+      <span>Galeri Karya</span>
+    </a>
+
+  <nav class="main-nav">
+    <a href="/">Explore</a>
+    <a href="/creator.html">Creator Dashboard</a>
+    <a href="/curator.html">Curator Dashboard</a>
+    <a href="/admin-creators.html">Admin</a>
+  </nav>
+
+    <div class="nav-right">
+      <span id="networkStatus" class="network-status">
+        Belum terhubung
+      </span>
+      <span id="walletAddress"></span>
+      <button id="connectWallet" class="btn btn-wallet">
+        Hubungkan Wallet
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <span class="eyebrow">DIGITAL ART • BLOCKCHAIN • IPFS</span>
+      <h1>Abadikan Karya,<br><span>Jadikan Aset Digital.</span></h1>
+      <p>
+        Jelajahi karya multimedia, temukan kreativitas,
+        dan verifikasi kepemilikan karya melalui blockchain.
+      </p>
+      <a href="#exploreGallery" class="btn btn-primary hero-button">
+        Jelajahi Galeri
+      </a>
+    </section>
+
+    <!-- EXPLORE GALLERY -->
+    <section id="exploreGallery" class="gallery-section">
+      <div class="gallery-heading">
+        <div>
+          <span class="eyebrow">DIGITAL ART COLLECTION</span>
+          <h2>Explore Gallery</h2>
+          <p>Temukan karya digital dari berbagai Creator.</p>
+        </div>
+
+        <button id="refreshGallery" class="btn btn-wallet">
+          Refresh Galeri
+        </button>
+      </div>
+
+      <div id="galleryInfo" class="gallery-info">
+        Hubungkan wallet untuk melihat koleksi karya.
+      </div>
+
+      <div id="galleryGrid" class="gallery-grid"></div>
+    </section>
+
+        <!-- TRANSFER NFT -->
+    <section id="transferSection" class="verification-section hidden">
+
+      <div class="verification-heading">
+        <div>
+          <span class="eyebrow">NFT OWNERSHIP</span>
+          <h2>Transfer Kepemilikan NFT</h2>
+          <p>
+            Pindahkan NFT ke alamat wallet lain melalui
+            transaksi blockchain.
+          </p>
+        </div>
+      </div>
+
+      <div class="verification-card">
+
+        <h3>Transfer NFT</h3>
+
+        <div class="detail-data">
+          <div class="detail-data-item">
+            <span>Wallet Terhubung</span>
+            <strong id="transferWallet">Belum terhubung</strong>
+          </div>
+
+          <div class="detail-data-item">
+            <span>Status Kepemilikan</span>
+            <strong id="transferEligibility">Hubungkan wallet untuk memeriksa</strong>
+          </div>
+        </div>
+
+        <div class="transfer-form">
+
+          <label for="recipientAddress">
+            Alamat Wallet Penerima
+          </label>
+
+          <input
+            type="text"
+            id="recipientAddress"
+            placeholder="0x..."
+            autocomplete="off"
+          >
+
+          <button
+            type="button"
+            id="connectTransferWallet"
+            class="transfer-button secondary"
+          >
+            Hubungkan MetaMask
+          </button>
+
+          <button
+            type="button"
+            id="transferNFTButton"
+            class="transfer-button"
+            disabled
+          >
+            Transfer NFT
+          </button>
+
+          <div
+            id="transferMessage"
+            class="transfer-message"
+            aria-live="polite"
+          >
+            Hubungkan wallet pemilik NFT untuk melakukan transfer.
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="verification-note">
+        <strong>Informasi Transfer</strong>
+        <p>
+          Transfer NFT tidak melibatkan jual beli. Pemilik NFT
+          hanya memindahkan kepemilikan token ke alamat wallet
+          penerima. Transaksi memerlukan konfirmasi MetaMask
+          dan biaya gas jaringan.
+        </p>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    Galeri Karya Multimedia — AI & Blockchain Project
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
