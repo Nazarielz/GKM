@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Galeri Karya Multimedia Berbasis AI dan Blockchain
 
 Scaffold proyek akhir D4 Teknik Informatika Multimedia Polnes.
@@ -58,3 +59,7 @@ Backend AI tidak menandatangani transaksi. Gunakan wallet test khusus untuk Sepo
 
 ## Status scaffold
 Kontrak, model AI, endpoint inferensi, IPFS, deployment, dan automated tests akan diimplementasikan bertahap. Scaffold ini belum merupakan aplikasi lengkap.
+=======
+# GKM
+Galeri Karya Multimedia
+>>>>>>> 977feca9331d365350185a2b5d2dcdca5065c604
